@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+p "daksndjasndasj"
+
+100.times {
+  Article.create(description: Faker::ChuckNorris.fact,
+                 price: Faker::Number.between(10,100),
+                 email: Faker::Internet.email,
+                 category_id: rand(1..10) )
+}
+
+10.times {
+  Category.create(name: Faker::Hacker.verb)
+}
